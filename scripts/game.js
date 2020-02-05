@@ -51,7 +51,7 @@ class Game {
   }
 
   paintBackground() {
-    this.canvasCtx.fillStyle = 'darkblue';
+    this.canvasCtx.fillStyle = 'black';
     this.canvasCtx.fillRect(0, 0, this.canvas.width, this.canvas.height);
   }
 

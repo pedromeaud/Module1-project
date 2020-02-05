@@ -10,8 +10,8 @@ class Ball {
     this.y += this.ySpeed;
   }
 
-  draw() {
-    this.game.canvasCtx.fillStyle = 'white';
+  paint() {
+    this.game.canvasCtx.fillStyle = 'grey';
     this.game.canvasCtx.beginPath();
     this.game.canvasCtx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
     this.game.canvasCtx.fill();
@@ -30,7 +30,7 @@ class Divider {
     this.game = game;
   }
 
-  draw() {
+  paint() {
     for (let i = -2; i < this.game.canvas.height; i += 45) {
       this.game.canvasCtx.fillStyle = 'grey';
       this.game.canvasCtx.fillRect(this.game.canvas.width / 2 - 1, i, 2, 20);
