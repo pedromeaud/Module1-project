@@ -10,7 +10,7 @@ class Ball {
     this.y += this.ySpeed;
   }
 
-  paint() {
+  draw() {
     this.game.canvasCtx.fillStyle = 'white';
     this.game.canvasCtx.beginPath();
     this.game.canvasCtx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
@@ -30,25 +30,10 @@ class Divider {
     this.game = game;
   }
 
-  paint() {
+  draw() {
     for (let i = -2; i < this.game.canvas.height; i += 45) {
       this.game.canvasCtx.fillStyle = 'grey';
       this.game.canvasCtx.fillRect(this.game.canvas.width / 2 - 1, i, 2, 20);
     }
-  }
-}
-
-class Platform {
-  constructor(game, xLocation) {
-    this.game = game;
-    this.height = 80;
-    this.width = 20;
-    this.x = xLocation;
-    this.y = this.game.canvas.height / 2 - this.height / 4;
-  }
-
-  paint() {
-    this.game.canvasCtx.fillStyle = 'grey';
-    this.game.canvasCtx.fillRect(this.x, this.y, this.width, this.height);
   }
 }

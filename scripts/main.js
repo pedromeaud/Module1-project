@@ -1,5 +1,5 @@
 //
-class Paddle {
+class Platform {
   constructor(game, xLocation) {
     this.game = game;
     this.height = 100;
