@@ -88,7 +88,7 @@ class Game {
         let deltaY = this.ball.y - (this.player1Platform.y + this.player1Platform.height / 2);
         this.ball.ySpeed = deltaY * 0.35;
       } else {
-        //this.ball.reset();
+        this.ball.reset();
         //this.lose();
       }
     }
@@ -106,7 +106,7 @@ class Game {
         let deltaY = this.ball.y - (this.player2Platform.y + this.player2Platform.height / 2);
         this.ball.ySpeed = deltaY * 0.45;
       } else {
-        //this.ball.reset();
+        this.ball.reset();
       }
     }
 
