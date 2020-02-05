@@ -11,7 +11,7 @@ class Ball {
   }
 
   paint() {
-    this.game.canvasCtx.fillStyle = 'grey';
+    this.game.canvasCtx.fillStyle = 'green';
     this.game.canvasCtx.beginPath();
     this.game.canvasCtx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
     this.game.canvasCtx.fill();
@@ -20,8 +20,8 @@ class Ball {
   reset() {
     this.x = this.game.canvas.width / 2;
     this.y = this.game.canvas.height / 2;
-    this.xSpeed = 5 * (Math.random() > 0.5 ? 1 : -1);
-    this.ySpeed = 5 * (Math.random() > 0.5 ? 1 : -1);
+    this.xSpeed = 7 * (Math.random() > 0.5 ? 1 : -1);
+    this.ySpeed = 7 * (Math.random() > 0.5 ? 1 : -1);
   }
 }
 
@@ -32,8 +32,8 @@ class Divider {
 
   paint() {
     for (let i = -2; i < this.game.canvas.height; i += 45) {
-      this.game.canvasCtx.fillStyle = 'grey';
-      this.game.canvasCtx.fillRect(this.game.canvas.width / 2 - 1, i, 2, 20);
+      this.game.canvasCtx.fillStyle = 'rgb(200, 200, 200)';
+      this.game.canvasCtx.fillRect(this.game.canvas.width / 2 - 1, i, 25, 1);
     }
   }
 }
