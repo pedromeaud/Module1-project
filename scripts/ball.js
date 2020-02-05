@@ -11,7 +11,7 @@ class Ball {
   }
 
   paint() {
-    this.game.canvasCtx.fillStyle = 'green';
+    this.game.canvasCtx.fillStyle = '#7B7979';
     this.game.canvasCtx.beginPath();
     this.game.canvasCtx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
     this.game.canvasCtx.fill();
@@ -32,7 +32,7 @@ class Divider {
 
   paint() {
     for (let i = -2; i < this.game.canvas.height; i += 45) {
-      this.game.canvasCtx.fillStyle = 'rgb(200, 200, 200)';
+      this.game.canvasCtx.fillStyle = '#7B7979';
       this.game.canvasCtx.fillRect(this.game.canvas.width / 2 - 1, i, 25, 1);
     }
   }

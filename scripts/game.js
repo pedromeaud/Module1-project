@@ -9,10 +9,25 @@ class Game {
     this.player1Platform = new Platform(this, 0);
     this.player2Platform = new Platform(this, 0);
     this.player2Platform.x = this.canvas.width - this.player2Platform.width;
-    this.setControBindings();
+    this.setControlBindings();
   }
 
-  setControBindings() {
+  /*lose() {
+    this.lost = false;
+    this.currentLife = 3;
+    this.losingLife = 0;
+    if (this.ball <= this.canvas.width.y) {
+      this.currentLife = -1;
+    }
+    if ((this.currentLife = this.losingLife)) {
+      this.lost = true;
+    }
+    if ((this.lost = true)) {
+      alert('GAME OVER');
+    }
+  }
+*/
+  setControlBindings() {
     const $buttonStart = document.getElementById('btn-start');
     $buttonStart.addEventListener('click', () => {
       this.ball.reset();
@@ -59,7 +74,7 @@ class Game {
   }
 
   paintBackground() {
-    this.canvasCtx.fillStyle = '#242222';
+    this.canvasCtx.fillStyle = 'black';
     this.canvasCtx.fillRect(0, 0, this.canvas.width, this.canvas.height);
   }
 
@@ -71,9 +86,10 @@ class Game {
       ) {
         this.ball.xSpeed *= -1;
         let deltaY = this.ball.y - (this.player1Platform.y + this.player1Platform.height / 2);
-        this.ball.ySpeed = deltaY * 0.45;
+        this.ball.ySpeed = deltaY * 0.35;
       } else {
         //this.ball.reset();
+        //this.lose();
       }
     }
 
