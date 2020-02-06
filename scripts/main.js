@@ -1,4 +1,4 @@
-//
+// player platform
 class Platform {
   constructor(game, xLocation) {
     this.game = game;

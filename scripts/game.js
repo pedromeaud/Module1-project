@@ -19,11 +19,11 @@ class Game {
       alert('NPC is better then you!!');
     }
   }
-
+  //need to work on pause
   togglePause() {
     this.isRunning = !this.isRunning;
   }
-
+  //buttons
   setControlBindings() {
     const $buttonStart = document.getElementById('btn-start');
     $buttonStart.addEventListener('click', () => {
@@ -49,7 +49,7 @@ class Game {
     this.ball.update();
     this.detectCollision();
   }
-
+  //paint on canvas
   paint() {
     this.paintBackground();
     this.divider.paint();
@@ -57,7 +57,7 @@ class Game {
     this.player1Platform.paint();
     this.player2Platform.paint();
   }
-
+  // cursor position
   player1MouseEvents() {
     document.addEventListener('mousemove', event => {
       let mousePosition = this.mousePosition(event);
@@ -74,12 +74,12 @@ class Game {
       y: event.clientY - rect.top - root.scrollTop
     };
   }
-
+  //canavs background with opacity
   paintBackground() {
     this.canvasCtx.fillStyle = 'black';
     this.canvasCtx.fillRect(0, 0, this.canvas.width, this.canvas.height);
   }
-
+  // detecting collisions current lose function not working, currentLife nao diminui as vidas
   detectCollision() {
     if (this.ball.x + this.player1Platform.width < 0) {
       if (
@@ -122,7 +122,7 @@ class Game {
       this.ball.ySpeed *= -1;
     }
   }
-
+  //player2 platform movement following the ball
   npcMovement() {
     if (this.ball.y + 10 < this.player2Platform.y + this.player2Platform.height / 2) {
       this.player2Platform.y -= 12;

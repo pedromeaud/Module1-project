@@ -1,8 +1,9 @@
+// ball class
 class Ball {
   constructor(game) {
     this.game = game;
     this.reset();
-    this.radius = 10;
+    this.radius = 8;
   }
 
   update() {
