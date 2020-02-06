@@ -9,7 +9,7 @@ class Platform {
   }
 
   paint() {
-    this.game.canvasCtx.fillStyle = '#7B7979';
+    this.game.canvasCtx.fillStyle = '#F5F6F7';
     this.game.canvasCtx.fillRect(this.x, this.y, this.width, this.height);
   }
 }

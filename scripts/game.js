@@ -11,6 +11,8 @@ class Game {
     this.player2Platform.x = this.canvas.width - this.player2Platform.width;
     this.currenLife = 5;
     this.lost = false;
+    this.backgroundMusic = document.getElementById('background-music');
+    this.backgroundMusic.currentTime = 0;
     this.setControlBindings();
   }
   //Not working well
@@ -40,6 +42,7 @@ class Game {
     this.player1MouseEvents(this.isRunning);
     setInterval(() => {
       this.update();
+      this.backgroundMusic.play();
       this.paint();
     }, 1250 / this.fps);
   }
