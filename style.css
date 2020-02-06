@@ -2,7 +2,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('/images/space-1580897389262-9363.jpg');
+  background-image: url('/Module1-project/images/space-1580897389262-9363.jpg');
   font-family: 'Roboto', sans-serif;
 }
 section {
@@ -20,15 +20,18 @@ h1 {
   font-size: 2em;
   margin-right: -200px;
   margin-top: 100px;
+  opacity: 1;
 }
 
 canvas {
   margin-top: 100px;
+  opacity: 0.6;
 }
 
 aside {
   text-align: right;
   margin-top: -400px;
+  margin-right: -100px;
 }
 h2 {
   color: rgb(200, 200, 200);

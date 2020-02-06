@@ -9,37 +9,39 @@ class Game {
     this.player1Platform = new Platform(this, 0);
     this.player2Platform = new Platform(this, 0);
     this.player2Platform.x = this.canvas.width - this.player2Platform.width;
+    this.currenLife = 5;
+    this.lost = false;
     this.setControlBindings();
   }
-
-  /*lose() {
-    this.lost = false;
-    this.currentLife = 3;
-    this.losingLife = 0;
-    if (this.ball <= this.canvas.width.y) {
-      this.currentLife = -1;
-    }
-    if ((this.currentLife = this.losingLife)) {
-      this.lost = true;
-    }
-    if ((this.lost = true)) {
-      alert('GAME OVER');
+  //Not working well
+  lose() {
+    if (this.lost === true) {
+      alert('NPC is better then you!!');
     }
   }
-*/
+
+  togglePause() {
+    this.isRunning = !this.isRunning;
+  }
+
   setControlBindings() {
     const $buttonStart = document.getElementById('btn-start');
     $buttonStart.addEventListener('click', () => {
       this.ball.reset();
     });
+    const $buttonStop = document.getElementById('btn-stop');
+    $buttonStop.addEventListener('click', () => {
+      this.togglePause();
+      alert('Pause');
+    });
   }
 
   run() {
-    this.player1MouseEvents();
+    this.player1MouseEvents(this.isRunning);
     setInterval(() => {
       this.update();
       this.paint();
-    }, 1000 / this.fps);
+    }, 1250 / this.fps);
   }
 
   update() {
@@ -79,17 +81,23 @@ class Game {
   }
 
   detectCollision() {
-    if (this.ball.x < 0) {
+    if (this.ball.x + this.player1Platform.width < 0) {
       if (
         this.ball.y >= this.player1Platform.y &&
         this.ball.y <= this.player1Platform.y + this.player1Platform.height
       ) {
+        //this.ball.x = this.ball.radius * 2 + this.player1Platform.width;
         this.ball.xSpeed *= -1;
         let deltaY = this.ball.y - (this.player1Platform.y + this.player1Platform.height / 2);
         this.ball.ySpeed = deltaY * 0.35;
       } else {
-        this.ball.reset();
-        //this.lose();
+        if (this.currenLife === 0) {
+          this.lost = true;
+          this.lose();
+          this.ball.reset();
+        } else {
+          this.currenLife--;
+        }
       }
     }
 
@@ -117,11 +125,11 @@ class Game {
 
   npcMovement() {
     if (this.ball.y + 10 < this.player2Platform.y + this.player2Platform.height / 2) {
-      this.player2Platform.y -= 7;
+      this.player2Platform.y -= 12;
     }
 
     if (this.ball.y + 10 > this.player2Platform.y + this.player2Platform.height / 2) {
-      this.player2Platform.y += 7;
+      this.player2Platform.y += 12;
     }
   }
 }

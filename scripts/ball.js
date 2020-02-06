@@ -11,7 +11,7 @@ class Ball {
   }
 
   paint() {
-    this.game.canvasCtx.fillStyle = '#7B7979';
+    this.game.canvasCtx.fillStyle = '#f2f2f2';
     this.game.canvasCtx.beginPath();
     this.game.canvasCtx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
     this.game.canvasCtx.fill();
@@ -22,6 +22,8 @@ class Ball {
     this.y = this.game.canvas.height / 2;
     this.xSpeed = 7 * (Math.random() > 0.5 ? 1 : -1);
     this.ySpeed = 7 * (Math.random() > 0.5 ? 1 : -1);
+    this.game.currenLife = 5;
+    this.isRunning = true;
   }
 }
 
