@@ -8,7 +8,10 @@ body {
   justify-content: center;
   align-items: center;
   background-image: url('/images/space-1580897389262-9363.jpg');
-  font-family: 'Roboto', sans-serif;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Oswald', sans-serif;
 }
 section {
   display: flex;
