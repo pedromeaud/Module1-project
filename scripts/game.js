@@ -9,7 +9,7 @@ class Game {
     this.player1Platform = new Platform(this, 0);
     this.player2Platform = new Platform(this, 0);
     this.player2Platform.x = this.canvas.width - this.player2Platform.width;
-    this.currenLife = 5;
+    this.currenLife = 5; //not working, do not understand why
     this.lost = false;
     this.backgroundMusic = document.getElementById('background-music');
     this.backgroundMusic.currentTime = 0;
@@ -44,7 +44,7 @@ class Game {
       this.backgroundMusic.play();
       this.update();
       this.paint();
-    }, 1250 / this.fps);
+    }, 1200 / this.fps);
   }
 
   update() {
@@ -118,7 +118,7 @@ class Game {
         this.ball.ySpeed = deltaY * 0.45;
       } else {
         this.ball.reset();
-        alert('You Win');
+        alert('You Win!');
       }
     }
 

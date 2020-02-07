@@ -35,8 +35,8 @@ class Divider {
 
   paint() {
     for (let i = -2; i < this.game.canvas.height; i += 45) {
-      this.game.canvasCtx.fillStyle = 'white';
-      this.game.canvasCtx.fillRect(this.game.canvas.width / 2 - 1, i, 25, 5);
+      this.game.canvasCtx.fillStyle = '#f2f2f2';
+      this.game.canvasCtx.fillRect(this.game.canvas.width / 2 - 1, i, 25, 2);
     }
   }
 }

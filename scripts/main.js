@@ -1,9 +1,9 @@
-// player platform
+// players platform
 class Platform {
   constructor(game, xLocation) {
     this.game = game;
     this.height = 105;
-    this.width = 6;
+    this.width = 4;
     this.x = xLocation;
     this.y = this.game.canvas.height;
   }
