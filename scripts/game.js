@@ -18,7 +18,7 @@ class Game {
   //Not working well
   lose() {
     if (this.lost === true) {
-      alert('NPC is better then you!!');
+      alert('YOU LOSE!');
     }
   }
   //need to work on pause
@@ -41,8 +41,8 @@ class Game {
   run() {
     this.player1MouseEvents(this.isRunning);
     setInterval(() => {
-      this.update();
       this.backgroundMusic.play();
+      this.update();
       this.paint();
     }, 1250 / this.fps);
   }
@@ -118,6 +118,7 @@ class Game {
         this.ball.ySpeed = deltaY * 0.45;
       } else {
         this.ball.reset();
+        alert('You Win');
       }
     }
 
@@ -128,11 +129,11 @@ class Game {
   //player2 platform movement following the ball
   npcMovement() {
     if (this.ball.y + 10 < this.player2Platform.y + this.player2Platform.height / 2) {
-      this.player2Platform.y -= 12;
+      this.player2Platform.y -= 10;
     }
 
     if (this.ball.y + 10 > this.player2Platform.y + this.player2Platform.height / 2) {
-      this.player2Platform.y += 12;
+      this.player2Platform.y += 10;
     }
   }
 }
